@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SynthesisSequenceGenerator"
         mc:Ignorable="d" FontSize="18" FontFamily="Consolas"
-        Title="Синтез генератора последовательностей" Height="550" Width="605" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        Title="Синтез генератора последовательностей" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
     <Window.DataContext>
         <local:ModelGenerator/>
     </Window.DataContext>
@@ -200,112 +200,144 @@
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Q1}" Background="Yellow"/>
+                                <Border Background="Yellow" Padding="4">
+                                    <TextBlock Text="{Binding Path=Q1}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Q2}" Background="Yellow"/>
+                                <Border Background="Yellow" Padding="4">
+                                    <TextBlock Text="{Binding Path=Q2}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Q3}" Background="Yellow"/>
+                                <Border Background="Yellow" Padding="4">
+                                    <TextBlock Text="{Binding Path=Q3}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Q4}" Background="Yellow"/>
+                                <Border Background="Yellow" Padding="4">
+                                    <TextBlock Text="{Binding Path=Q4}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Qn1}" Background="Cyan"/>
+                                <Border Background="Cyan" Padding="4">
+                                    <TextBlock Text="{Binding Path=Qn1}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Qn2}" Background="Cyan"/>
+                                <Border Background="Cyan" Padding="4">
+                                    <TextBlock Text="{Binding Path=Qn2}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Qn3}" Background="Cyan"/>
+                                <Border Background="Cyan" Padding="4">
+                                    <TextBlock Text="{Binding Path=Qn3}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Qn4}" Background="Cyan"/>
+                                <Border Background="Cyan" Padding="4">
+                                    <TextBlock Text="{Binding Path=Qn4}" />
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=J1}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=J1}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=K1}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=K1}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=J2}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=J2}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=K2}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=K2}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=J3}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=J3}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=K3}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=K3}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=J4}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=J4}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="{Binding ColumnWidth}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=K4}" Background="Lime"/>
+                                <Border Background="Lime" Padding="4">
+                                    <TextBlock Text="{Binding Path=K4}"/>
+                                </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
