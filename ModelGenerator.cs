@@ -6,6 +6,7 @@ namespace SynthesisSequenceGenerator
 {
     public class ModelGenerator
     {
+        public double ColumnWidth { get; set; } = 30.0;
         public ModelGenerator()
         {
             for (var i = 0; i < 16; i++) 
@@ -13,7 +14,10 @@ namespace SynthesisSequenceGenerator
                 var item = new Sequense() 
                 { 
                     Index = i,
-                    Q1 = 0,
+                    Q4 = (i & 0x01) > 0 ? 1 : 0,
+                    Q3 = (i & 0x02) > 0 ? 1 : 0,
+                    Q2 = (i & 0x04) > 0 ? 1 : 0,
+                    Q1 = (i & 0x08) > 0 ? 1 : 0,
                 };
                 Sequenses.Add(item);
             }
@@ -25,6 +29,7 @@ namespace SynthesisSequenceGenerator
     public class Sequense 
     { 
         public Sequense() { }
+        public bool Enabled { get; set; } = true;
         public int Index { get; set; }
         public int Q1 { get; set; }
         public int Q2 { get; set; }
