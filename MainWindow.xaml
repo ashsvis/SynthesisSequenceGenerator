@@ -17,340 +17,347 @@
         <local:StateToHexConverter x:Key="StateToHexConv"/>
     </Window.Resources>
     <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="32"/>
-            <ColumnDefinition Width="32"/>
-            <ColumnDefinition Width="32"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
-            <ColumnDefinition Width="{Binding ColumnWidth}"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="19" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Последовательность:" FontFamily="ArialNarrow" FontSize="16"/>
-                <TextBox x:Name="SourceSequencesBox" Width="390" BorderThickness="0"  Background="White"
+        <Grid Margin="5" Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+                <ColumnDefinition Width="{Binding ColumnWidth}"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="19" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Последовательность:" FontFamily="ArialNarrow" FontSize="16"/>
+                    <TextBox x:Name="SourceSequencesBox" Width="390" BorderThickness="0"  Background="White"
                          Text="{Binding Path=SourceSequenses}" VerticalContentAlignment="Center"/>
-                <Button x:Name="SourceSequencesButton" Content="Go" Click="SourceSequencesButton_Click"
+                    <Button x:Name="SourceSequencesButton" Content="Go" Click="SourceSequencesButton_Click"
                         Background="Green" Foreground="White"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray"/>
-        <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="10" Margin="5,5,5,0"/>
-                <TextBlock Text="CC" Margin="5,0,5,0"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="16" Margin="5,5,5,0"/>
-                <TextBlock Text="CC" Margin="5,0,5,0"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="8" BorderThickness="1" BorderBrush="Gray">
-            <TextBlock Text="Состояния триггеров" HorizontalAlignment="Center" Margin="5"/>
-        </Border>
-        <Border Grid.Row="1" Grid.Column="11" Grid.ColumnSpan="8" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray">
-            <TextBlock Text="Функции возбуждения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="t" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="t+1" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="3" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="4" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="5" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="6" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="7" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="8" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="9" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="10" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="Q"/>
-                <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="11" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="J"/>
-                <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="12" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="K"/>
-                <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="13" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="J"/>
-                <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="14" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="K"/>
-                <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="15" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="J"/>
-                <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="16" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="K"/>
-                <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="17" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="J"/>
-                <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="18" BorderThickness="1" BorderBrush="Gray">
-            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBlock Text="K"/>
-                <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
-            </StackPanel>
-        </Border>
-        <ListView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="19" ItemsSource="{Binding Sequenses}" Width="590" Background="WhiteSmoke"
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray"/>
+            <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="10" Margin="5,5,5,0"/>
+                    <TextBlock Text="CC" Margin="5,0,5,0"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="16" Margin="5,5,5,0"/>
+                    <TextBlock Text="CC" Margin="5,0,5,0"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="8" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock Text="Состояния триггеров" HorizontalAlignment="Center" Margin="5"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="11" Grid.ColumnSpan="8" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray">
+                <TextBlock Text="Функции возбуждения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="t" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="t+1" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="3" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="4" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="5" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="6" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="7" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="8" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="9" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="10" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Q"/>
+                    <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="11" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="J"/>
+                    <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="12" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="K"/>
+                    <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="13" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="J"/>
+                    <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="14" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="K"/>
+                    <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="15" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="J"/>
+                    <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="16" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="K"/>
+                    <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="17" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="J"/>
+                    <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="18" BorderThickness="1" BorderBrush="Gray">
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="K"/>
+                    <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Border>
+            <ListView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="19" ItemsSource="{Binding Sequenses}" Width="590" Background="WhiteSmoke"
                   BorderThickness="1" BorderBrush="Gray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ListView.View>
-                <GridView ColumnHeaderContainerStyle="{StaticResource myHeaderStyle}">
-                    <GridViewColumn Width="34">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="35">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Path=State}" Width="27"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="22">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Path=State, StringFormat='X'}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Yellow" Padding="4">
-                                    <TextBlock Text="{Binding Path=Q1}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Yellow" Padding="4">
-                                    <TextBlock Text="{Binding Path=Q2}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Yellow" Padding="4">
-                                    <TextBlock Text="{Binding Path=Q3}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Yellow" Padding="4">
-                                    <TextBlock Text="{Binding Path=Q4}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Cyan" Padding="4">
-                                    <TextBlock Text="{Binding Path=Qn1, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Cyan" Padding="4">
-                                    <TextBlock Text="{Binding Path=Qn2, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Cyan" Padding="4">
-                                    <TextBlock Text="{Binding Path=Qn3, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Cyan" Padding="4">
-                                    <TextBlock Text="{Binding Path=Qn4, StringFormat='0;*'}" />
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=J1, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=K1, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=J2, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=K2, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=J3, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=K3, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=J4, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="{Binding ColumnWidth}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Background="Lime" Padding="4">
-                                    <TextBlock Text="{Binding Path=K4, StringFormat='0;*'}"/>
-                                </Border>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+                <ListView.View>
+                    <GridView ColumnHeaderContainerStyle="{StaticResource myHeaderStyle}">
+                        <GridViewColumn Width="34">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="35">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=State}" Width="27"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="22">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=State, StringFormat='X'}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Yellow" Padding="4">
+                                        <TextBlock Text="{Binding Path=Q1}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Yellow" Padding="4">
+                                        <TextBlock Text="{Binding Path=Q2}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Yellow" Padding="4">
+                                        <TextBlock Text="{Binding Path=Q3}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Yellow" Padding="4">
+                                        <TextBlock Text="{Binding Path=Q4}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Cyan" Padding="4">
+                                        <TextBlock Text="{Binding Path=Qn1, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Cyan" Padding="4">
+                                        <TextBlock Text="{Binding Path=Qn2, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Cyan" Padding="4">
+                                        <TextBlock Text="{Binding Path=Qn3, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Cyan" Padding="4">
+                                        <TextBlock Text="{Binding Path=Qn4, StringFormat='0;*'}" />
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=J1, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=K1, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=J2, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=K2, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=J3, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=K3, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=J4, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="{Binding ColumnWidth}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="Lime" Padding="4">
+                                        <TextBlock Text="{Binding Path=K4, StringFormat='0;*'}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <local:TableCardUC Grid.Row="0" Grid.Column="1" />
     </Grid>
 </Window>
