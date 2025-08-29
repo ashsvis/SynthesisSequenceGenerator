@@ -1,42 +1,80 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Windows.Data;
 
 namespace SynthesisSequenceGenerator
 {
-    public class ModelGenerator
+    public class ModelGenerator : ObservableObject
     {
-        public double ColumnWidth { get; set; } = 30.0;
+        private string sourceSequenses = string.Empty;
+
+        public double ColumnWidth { get; set; } = 30.5;
         public ModelGenerator()
         {
+            var array = Enumerable.Range(0, 16).ToArray();
+            //int[] array = [1, 2, 2, 1, 2, 3];
+            sourceSequenses = string.Join(" ", array.Select(x => x.ToString()));
+            GenerateSequences(array);
+        }
+
+        public void GenerateSequences(params int[] enabledStates)
+        {
             int i = 0;
-            while (i < 16) 
+            Sequenses.Clear();
+            while (i < enabledStates.Length)
             {
-                var item = new Sequense() 
-                { 
-                    Index = i,
-                    Q4 = (i & 0x01) > 0 ? 1 : 0,
-                    Q3 = (i & 0x02) > 0 ? 1 : 0,
-                    Q2 = (i & 0x04) > 0 ? 1 : 0,
-                    Q1 = (i & 0x08) > 0 ? 1 : 0,
+                var state = enabledStates[i];
+                var item = new Sequense()
+                {
+                    State = state,
+                    Q4 = (state & 0x01) > 0 ? 1 : 0,
+                    Q3 = (state & 0x02) > 0 ? 1 : 0,
+                    Q2 = (state & 0x04) > 0 ? 1 : 0,
+                    Q1 = (state & 0x08) > 0 ? 1 : 0,
                 };
-                i++;
-                item.Qn4 = (i & 0x01) > 0 ? 1 : 0;
-                item.Qn3 = (i & 0x02) > 0 ? 1 : 0;
-                item.Qn2 = (i & 0x04) > 0 ? 1 : 0;
-                item.Qn1 = (i & 0x08) > 0 ? 1 : 0;
+                var nextState = i < enabledStates.Length - 1 ? enabledStates[i + 1] : enabledStates[0];
+                item.Qn4 = (nextState & 0x01) > 0 ? 1 : 0;
+                item.Qn3 = (nextState & 0x02) > 0 ? 1 : 0;
+                item.Qn2 = (nextState & 0x04) > 0 ? 1 : 0;
+                item.Qn1 = (nextState & 0x08) > 0 ? 1 : 0;
                 Sequenses.Add(item);
+                i++;
+            }
+        }
+
+        public string SourceSequenses 
+        { 
+            get => sourceSequenses;
+            set
+            {
+                if (sourceSequenses == value) return;
+                sourceSequenses = value;
+                NotifyPropertyChanged(nameof(SourceSequenses));
             }
         }
 
         public ObservableCollection<Sequense> Sequenses { get; set; } = [];
     }
 
+    /// <summary>
+    /// Класс поддержки привязки данных
+    /// </summary>
+    public class ObservableObject : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected void NotifyPropertyChanged([CallerMemberName] string? propertyName = null)
+        {
+            var handler = PropertyChanged;
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
     public class Sequense 
     { 
         public Sequense() { }
-        public bool Enabled { get; set; } = true;
-        public int Index { get; set; }
+        public int State { get; set; }
         public int Q1 { get; set; }
         public int Q2 { get; set; }
         public int Q3 { get; set; }
