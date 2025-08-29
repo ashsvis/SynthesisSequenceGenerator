@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SynthesisSequenceGenerator"
         mc:Ignorable="d" FontSize="18" FontFamily="Consolas" Background="WhiteSmoke"
         Title="Синтез генератора последовательностей" ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
     <Window.DataContext>
         <local:ModelGenerator/>
     </Window.DataContext>
