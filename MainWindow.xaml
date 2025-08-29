@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SynthesisSequenceGenerator"
-        mc:Ignorable="d" FontSize="18" FontFamily="Consolas"
+        mc:Ignorable="d" FontSize="18" FontFamily="Consolas" Background="WhiteSmoke"
         Title="Синтез генератора последовательностей" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
     <Window.DataContext>
@@ -47,9 +47,10 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="19" BorderThickness="1" BorderBrush="Gray">
             <StackPanel Orientation="Horizontal">
-                <Label Content="Последовательность:"/>
-                <TextBox x:Name="SourceSequencesBox" Width="380" BorderThickness="0"
+                <Label Content="Последовательность:" FontFamily="ArialNarrow" FontSize="16"/>
+                <TextBox x:Name="SourceSequencesBox" Width="390" BorderThickness="0"  Background="White"
                          Text="{Binding Path=SourceSequenses}" VerticalContentAlignment="Center"/>
+                <Button x:Name="SourceSequencesButton" Content="Go" Click="SourceSequencesButton_Click" />
             </StackPanel>
         </Border>
         <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray"/>
@@ -179,7 +180,7 @@
                 <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
             </StackPanel>
         </Border>
-        <ListView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="19" ItemsSource="{Binding Sequenses}" Width="590"
+        <ListView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="19" ItemsSource="{Binding Sequenses}" Width="590" Background="WhiteSmoke"
                   BorderThickness="1" BorderBrush="Gray" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{StaticResource myHeaderStyle}">

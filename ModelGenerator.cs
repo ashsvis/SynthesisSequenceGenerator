@@ -44,6 +44,18 @@ namespace SynthesisSequenceGenerator
             }
         }
 
+        public static int[] GenerateSourceArray(string text)
+        {
+            List<int> sequences = [];
+            text.Split(' ', StringSplitOptions.RemoveEmptyEntries).ToList()
+                .ForEach(x =>
+                {
+                    if (int.TryParse(x, out int result) && result >= 0 && result < 16)
+                        sequences.Add(result);
+                });
+            return [.. sequences];
+        }
+
         public string SourceSequenses 
         { 
             get => sourceSequenses;
