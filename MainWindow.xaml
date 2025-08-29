@@ -50,7 +50,8 @@
                 <Label Content="Последовательность:" FontFamily="ArialNarrow" FontSize="16"/>
                 <TextBox x:Name="SourceSequencesBox" Width="390" BorderThickness="0"  Background="White"
                          Text="{Binding Path=SourceSequenses}" VerticalContentAlignment="Center"/>
-                <Button x:Name="SourceSequencesButton" Content="Go" Click="SourceSequencesButton_Click" />
+                <Button x:Name="SourceSequencesButton" Content="Go" Click="SourceSequencesButton_Click"
+                        Background="Green" Foreground="White"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Gray"/>

@@ -39,6 +39,15 @@ namespace SynthesisSequenceGenerator
                 item.Qn3 = (nextState & 0x02) > 0 ? 1 : 0;
                 item.Qn2 = (nextState & 0x04) > 0 ? 1 : 0;
                 item.Qn1 = (nextState & 0x08) > 0 ? 1 : 0;
+                //------------------
+                item.J4 = item.Q4 == 0 && item.Qn4 == 0 ? 0 : item.Q4 == 0 && item.Qn4 == 1 ? 1 : -1;
+                item.K4 = item.Q4 == 1 && item.Qn4 == 0 ? 1 : item.Q4 == 1 && item.Qn4 == 1 ? 0 : -1;
+                item.J3 = item.Q3 == 0 && item.Qn3 == 0 ? 0 : item.Q3 == 0 && item.Qn3 == 1 ? 1 : -1;
+                item.K3 = item.Q3 == 1 && item.Qn3 == 0 ? 1 : item.Q3 == 1 && item.Qn3 == 1 ? 0 : -1;
+                item.J2 = item.Q2 == 0 && item.Qn2 == 0 ? 0 : item.Q2 == 0 && item.Qn2 == 1 ? 1 : -1;
+                item.K2 = item.Q2 == 1 && item.Qn2 == 0 ? 1 : item.Q2 == 1 && item.Qn2 == 1 ? 0 : -1;
+                item.J1 = item.Q1 == 0 && item.Qn1 == 0 ? 0 : item.Q1 == 0 && item.Qn1 == 1 ? 1 : -1;
+                item.K1 = item.Q1 == 1 && item.Qn1 == 0 ? 1 : item.Q1 == 1 && item.Qn1 == 1 ? 0 : -1;
                 Sequenses.Add(item);
                 i++;
             }
