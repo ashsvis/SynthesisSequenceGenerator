@@ -13,8 +13,8 @@ namespace SynthesisSequenceGenerator
         public double ColumnWidth { get; set; } = 30.5;
         public ModelGenerator()
         {
-            var array = Enumerable.Range(0, 16).ToArray();
-            //int[] array = [1, 2, 2, 1, 2, 3];
+            //var array = Enumerable.Range(0, 16).ToArray();
+            int[] array = [];
             sourceSequenses = string.Join(" ", array.Select(x => x.ToString()));
             GenerateSequences(array);
         }
@@ -29,25 +29,25 @@ namespace SynthesisSequenceGenerator
                 var item = new Sequense()
                 {
                     State = state,
-                    Q4 = (state & 0x01) > 0 ? 1 : 0,
-                    Q3 = (state & 0x02) > 0 ? 1 : 0,
-                    Q2 = (state & 0x04) > 0 ? 1 : 0,
-                    Q1 = (state & 0x08) > 0 ? 1 : 0,
+                    Q1 = (state & 0x01) > 0 ? 1 : 0,
+                    Q2 = (state & 0x02) > 0 ? 1 : 0,
+                    Q3 = (state & 0x04) > 0 ? 1 : 0,
+                    Q4 = (state & 0x08) > 0 ? 1 : 0,
                 };
                 var nextState = i < enabledStates.Length - 1 ? enabledStates[i + 1] : enabledStates[0];
-                item.Qn4 = (nextState & 0x01) > 0 ? 1 : 0;
-                item.Qn3 = (nextState & 0x02) > 0 ? 1 : 0;
-                item.Qn2 = (nextState & 0x04) > 0 ? 1 : 0;
-                item.Qn1 = (nextState & 0x08) > 0 ? 1 : 0;
+                item.Qn1 = (nextState & 0x01) > 0 ? 1 : 0;
+                item.Qn2 = (nextState & 0x02) > 0 ? 1 : 0;
+                item.Qn3 = (nextState & 0x04) > 0 ? 1 : 0;
+                item.Qn4 = (nextState & 0x08) > 0 ? 1 : 0;
                 //------------------
-                item.J4 = item.Q4 == 0 && item.Qn4 == 0 ? 0 : item.Q4 == 0 && item.Qn4 == 1 ? 1 : -1;
-                item.K4 = item.Q4 == 1 && item.Qn4 == 0 ? 1 : item.Q4 == 1 && item.Qn4 == 1 ? 0 : -1;
-                item.J3 = item.Q3 == 0 && item.Qn3 == 0 ? 0 : item.Q3 == 0 && item.Qn3 == 1 ? 1 : -1;
-                item.K3 = item.Q3 == 1 && item.Qn3 == 0 ? 1 : item.Q3 == 1 && item.Qn3 == 1 ? 0 : -1;
-                item.J2 = item.Q2 == 0 && item.Qn2 == 0 ? 0 : item.Q2 == 0 && item.Qn2 == 1 ? 1 : -1;
-                item.K2 = item.Q2 == 1 && item.Qn2 == 0 ? 1 : item.Q2 == 1 && item.Qn2 == 1 ? 0 : -1;
                 item.J1 = item.Q1 == 0 && item.Qn1 == 0 ? 0 : item.Q1 == 0 && item.Qn1 == 1 ? 1 : -1;
                 item.K1 = item.Q1 == 1 && item.Qn1 == 0 ? 1 : item.Q1 == 1 && item.Qn1 == 1 ? 0 : -1;
+                item.J2 = item.Q2 == 0 && item.Qn2 == 0 ? 0 : item.Q2 == 0 && item.Qn2 == 1 ? 1 : -1;
+                item.K2 = item.Q2 == 1 && item.Qn2 == 0 ? 1 : item.Q2 == 1 && item.Qn2 == 1 ? 0 : -1;
+                item.J3 = item.Q3 == 0 && item.Qn3 == 0 ? 0 : item.Q3 == 0 && item.Qn3 == 1 ? 1 : -1;
+                item.K3 = item.Q3 == 1 && item.Qn3 == 0 ? 1 : item.Q3 == 1 && item.Qn3 == 1 ? 0 : -1;
+                item.J4 = item.Q4 == 0 && item.Qn4 == 0 ? 0 : item.Q4 == 0 && item.Qn4 == 1 ? 1 : -1;
+                item.K4 = item.Q4 == 1 && item.Qn4 == 0 ? 1 : item.Q4 == 1 && item.Qn4 == 1 ? 0 : -1;
                 Sequenses.Add(item);
                 i++;
             }

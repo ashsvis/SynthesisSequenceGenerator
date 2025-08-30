@@ -365,13 +365,13 @@
                 </ListView.View>
             </ListView>
         </Grid>
-        <local:TableCardUC Grid.Row="0" Grid.Column="1" x:Uid="J1"/>
-        <local:TableCardUC Grid.Row="0" Grid.Column="2" x:Uid="K1"/>
-        <local:TableCardUC Grid.Row="1" Grid.Column="1" x:Uid="J2"/>
-        <local:TableCardUC Grid.Row="1" Grid.Column="2" x:Uid="K2"/>
-        <local:TableCardUC Grid.Row="2" Grid.Column="1" x:Uid="J3"/>
-        <local:TableCardUC Grid.Row="2" Grid.Column="2" x:Uid="K3"/>
-        <local:TableCardUC Grid.Row="3" Grid.Column="1" x:Uid="J4"/>
-        <local:TableCardUC Grid.Row="3" Grid.Column="2" x:Uid="K4"/>
+        <local:TableCardUC Grid.Row="0" Grid.Column="1" x:Name="J1" x:Uid="J1"/>
+        <local:TableCardUC Grid.Row="0" Grid.Column="2" x:Name="K1" x:Uid="K1"/>
+        <local:TableCardUC Grid.Row="1" Grid.Column="1" x:Name="J2" x:Uid="J2"/>
+        <local:TableCardUC Grid.Row="1" Grid.Column="2" x:Name="K2" x:Uid="K2"/>
+        <local:TableCardUC Grid.Row="2" Grid.Column="1" x:Name="J3" x:Uid="J3"/>
+        <local:TableCardUC Grid.Row="2" Grid.Column="2" x:Name="K3" x:Uid="K3"/>
+        <local:TableCardUC Grid.Row="3" Grid.Column="1" x:Name="J4" x:Uid="J4"/>
+        <local:TableCardUC Grid.Row="3" Grid.Column="2" x:Name="K4" x:Uid="K4"/>
     </Grid>
 </Window>

@@ -17,6 +17,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
@@ -35,9 +36,9 @@
         <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="Gray">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Q"/>
-                <TextBlock Text="3" FontSize="14" VerticalAlignment="Bottom"/>
+                <TextBlock Text="3" FontSize="12" VerticalAlignment="Bottom"/>
                 <TextBlock Text="Q"/>
-                <TextBlock Text="4" FontSize="14" VerticalAlignment="Bottom"/>
+                <TextBlock Text="4" FontSize="12" VerticalAlignment="Bottom"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="1" Grid.Column="2" BorderThickness="1" BorderBrush="Gray">
@@ -55,54 +56,78 @@
         <Border Grid.Row="2" Grid.Column="0" Grid.RowSpan="4"  BorderThickness="1" BorderBrush="Gray">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Q"/>
-                <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
+                <TextBlock Text="1" FontSize="12" VerticalAlignment="Bottom"/>
                 <TextBlock Text="Q"/>
-                <TextBlock Text="2" FontSize="14" VerticalAlignment="Bottom"/>
+                <TextBlock Text="2" FontSize="12" VerticalAlignment="Bottom"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="Gray">
             <TextBlock Text="00" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="2" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R00_00, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="3" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R00_01, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="4" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R00_11, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="5" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R00_10, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="1" BorderThickness="1" BorderBrush="Gray">
             <TextBlock Text="01" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="2" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R01_00, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="3" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R01_01, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="4" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R01_11, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="5" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R01_10, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="1" BorderThickness="1" BorderBrush="Gray">
             <TextBlock Text="11" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="2" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R11_00, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="3" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R11_01, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="4" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R11_11, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="5" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R11_10, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="1" BorderThickness="1" BorderBrush="Gray">
             <TextBlock Text="10" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="2" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R10_00, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="3" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R10_01, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="4" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R10_11, StringFormat='0;*'}" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="5" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock Text="{Binding Path=R10_10, StringFormat='0;*'}" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" BorderThickness="1" BorderBrush="Gray">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding Path=Key}"/>
+                <TextBlock Text="{Binding Path=Index}"/>
+                <TextBlock Text="="/>
+                <TextBlock Text="{Binding Path=Function}"/>
+            </StackPanel>
         </Border>
     </Grid>
 </UserControl>
