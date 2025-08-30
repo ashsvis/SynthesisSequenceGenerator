@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SynthesisSequenceGenerator"
-             mc:Ignorable="d" 
-             d:DesignHeight="120.333" d:DesignWidth="213">
+             mc:Ignorable="d" FontSize="16" FontFamily="Consolas" Background="WhiteSmoke" Loaded="UserControl_Loaded">
     <UserControl.DataContext>
         <local:ModelTableCard/>
     </UserControl.DataContext>
@@ -29,8 +28,8 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Gray">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="J"/>
-                <TextBlock Text="1" FontSize="14" VerticalAlignment="Bottom"/>
+                <TextBlock Text="{Binding Path=Key}"/>
+                <TextBlock Text="{Binding Path=Index}" FontSize="14" VerticalAlignment="Bottom"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="Gray">

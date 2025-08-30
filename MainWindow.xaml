@@ -20,8 +20,15 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="5" Grid.Row="0" Grid.Column="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -358,6 +365,13 @@
                 </ListView.View>
             </ListView>
         </Grid>
-        <local:TableCardUC Grid.Row="0" Grid.Column="1" />
+        <local:TableCardUC Grid.Row="0" Grid.Column="1" x:Uid="J1"/>
+        <local:TableCardUC Grid.Row="0" Grid.Column="2" x:Uid="K1"/>
+        <local:TableCardUC Grid.Row="1" Grid.Column="1" x:Uid="J2"/>
+        <local:TableCardUC Grid.Row="1" Grid.Column="2" x:Uid="K2"/>
+        <local:TableCardUC Grid.Row="2" Grid.Column="1" x:Uid="J3"/>
+        <local:TableCardUC Grid.Row="2" Grid.Column="2" x:Uid="K3"/>
+        <local:TableCardUC Grid.Row="3" Grid.Column="1" x:Uid="J4"/>
+        <local:TableCardUC Grid.Row="3" Grid.Column="2" x:Uid="K4"/>
     </Grid>
 </Window>

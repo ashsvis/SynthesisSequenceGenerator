@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 
 namespace SynthesisSequenceGenerator
 {
@@ -20,9 +7,23 @@ namespace SynthesisSequenceGenerator
     /// </summary>
     public partial class TableCardUC : UserControl
     {
+        private readonly ModelTableCard model;
+
         public TableCardUC()
         {
             InitializeComponent();
+            model = (ModelTableCard)DataContext;
+        }
+
+        private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var vals = Uid.ToCharArray();
+            if (vals.Length == 2)
+            {
+                model.Key = vals[0].ToString();
+                if (int.TryParse(vals[1].ToString(), out int index))
+                    model.Index = index;
+            }
         }
     }
 }
